@@ -1,8 +1,9 @@
-var API_PATH = "http://data.taipei/opendata/datalist/apiAccess?scope=resourceAquire&rid=55ec6d6e-dc5c-4268-a725-d04cc262172b";
+var API_PATH = "http://opendata.epa.gov.tw/ws/Data/UV/?$orderby=PublishAgency&$skip=0&$top=1000&format=json";
 
 function getData() {
   $.ajax({
     url : API_PATH,
+    dataType:"jsonp",
     type: "GET",
     success : function(data) {
       console.log(data);
